@@ -77,6 +77,17 @@ public class MoveZeroesSolution {
                     k ++;
     }
 
+    public void myMoveZeroes(int[] nums){
+        int flag = 0; // 该坐标之前的元素都是非零的 [0.flag)
+        for (int i = 0; i < nums.length; i++) {
+            if(nums[i]!=0){
+                if(i!=flag)
+                    swap(nums,flag,i);
+                flag++;
+            }
+        }
+    }
+
     private void swap(int[] nums, int i, int j){
         int t = nums[i];
         nums[i] = nums[j];
@@ -87,7 +98,7 @@ public class MoveZeroesSolution {
 
         int[] arr = {0, 1, 0, 3, 12};
 
-        (new MoveZeroesSolution()).moveZeroes(arr);
+        (new MoveZeroesSolution()).myMoveZeroes(arr);
 
         for(int i = 0 ; i < arr.length ; i ++)
             System.out.print(arr[i] + " ");

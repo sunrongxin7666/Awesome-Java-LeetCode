@@ -46,6 +46,25 @@ public class SortColors {
         }
     }
 
+
+    public void MysortColorsSolution(int[] nums){
+        int f0 = 0;
+        int f2 = nums.length-1;
+        // [0,f0) = 0
+        // [f0,i) =1
+        // [i,f2] 待搜索
+        // (f2, len-1] =2
+        for (int i = 0; i <= f2;) { //知道碰到f2说明全部有序；
+            if(nums[i] == 0){
+                swap(nums,f0++,i++); //f0+1 为已排序过的
+            } else if(nums[i]==1){
+                i++;
+            } else if(nums[i] ==2){
+                swap(nums,i,f2--); //f2-1 为未排序过的；
+            }
+        }
+    }
+
     private void swap(int[] nums, int i, int j){
         int t = nums[i];
         nums[i]= nums[j];
@@ -61,7 +80,7 @@ public class SortColors {
     public static void main(String[] args) {
 
         int[] nums = {2, 2, 2, 1, 1, 0};
-        (new SortColors()).sortColorsSolution(nums);
+        (new SortColors()).MysortColorsSolution(nums);
         printArr(nums);
     }
 }

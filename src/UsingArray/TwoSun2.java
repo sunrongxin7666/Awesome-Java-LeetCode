@@ -60,6 +60,22 @@ public class TwoSun2 {
         throw new IllegalStateException("The input has no solution");
     }
 
+    public int[] myTwoSumSolution3(int[] numbers, int target){
+        int l = 0;
+        int r = numbers.length - 1;
+        // [l,r] search
+        while ( l < r){
+            if(numbers[l]+numbers[r]==target)
+                return new int[]{l+1,r+1};
+            else if(numbers[l]+numbers[r]<target){
+                l++;
+            } else if(numbers[l]+numbers[r]>target){
+                r--;
+            }
+        }
+        throw new IllegalStateException("The input has no solution");
+    }
+
     private int binarySearch(int[] nums, int l, int r, int target){
 
         if(l < 0 || l > nums.length)
@@ -98,6 +114,6 @@ public class TwoSun2 {
 
         int[] nums = {2, 7, 11, 15};
         int target = 9;
-        printArr((new TwoSun2()).twoSumSolution(nums, target));
+        printArr((new TwoSun2()).myTwoSumSolution3(nums, target));
     }
 }
