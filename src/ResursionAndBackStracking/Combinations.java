@@ -56,8 +56,6 @@ public class Combinations {
             generateCombinations(n, k, i + 1, c);
             c.removeLast();
         }
-
-        return;
     }
 
     private static void printList(List<Integer> list){
