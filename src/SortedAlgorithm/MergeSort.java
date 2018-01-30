@@ -29,7 +29,7 @@ public class MergeSort {
             else if(r==high+1){
                 arrCopy[i]=array[l++];
             }else if(array[l]<array[r]){
-                arrCopy[i]=array[l++];
+                arrCopy[i] = array[l++];
             }else{
                 arrCopy[i] = array[r++];
             }

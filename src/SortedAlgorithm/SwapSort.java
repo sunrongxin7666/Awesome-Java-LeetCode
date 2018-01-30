@@ -7,8 +7,8 @@ public class SwapSort {
         if(array==null||array.length==0||array.length==1)
             return;
 
-        for (int i = 0; i < array.length-1; i++) {
-            for (int j = 0 ; j+1 < array.length-i-1; j++) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0 ; j+1 < array.length-i; j++) {
                 if(array[j] > array[j+1]){
                     swap(array,j,j+1);
                 }

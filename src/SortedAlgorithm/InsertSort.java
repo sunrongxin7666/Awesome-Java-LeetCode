@@ -4,7 +4,7 @@ public class InsertSort {
     public void insertSort(int[] array){
         for (int i = 0; i < array.length ; i++) {
             //从i开始依次调整位置
-            for (int j = i; j >0 ; j--) {
+            for (int j = i; j - 1 >= 0 ; j--) {
                 //发现位置不合适就调换
                 if(array[j] < array[j-1]){
                     int tmp = array[j];
