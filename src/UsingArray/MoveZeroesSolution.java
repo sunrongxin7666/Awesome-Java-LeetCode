@@ -78,13 +78,12 @@ public class MoveZeroesSolution {
     }
 
     public void myMoveZeroes(int[] nums){
-        int flag = 0; // 该坐标之前的元素都是非零的 [0.flag)
-        for (int i = 0; i < nums.length; i++) {
-            if(nums[i]!=0){
-                if(i!=flag)
-                    swap(nums,flag,i);
-                flag++;
-            }
+        int flag = nums.length; // 该坐标之前的元素都是非零的 [0.flag)
+        for (int i = 0; i < flag; ) {
+            if(nums[i]==0){
+                    swap(nums,--flag,i);
+            } else
+                i++;
         }
     }
 
