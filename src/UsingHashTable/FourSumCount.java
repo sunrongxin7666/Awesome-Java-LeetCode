@@ -17,9 +17,9 @@ public class FourSumCount {
 
         HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
         for(int i = 0 ; i < C.length ; i ++)
-            for(int j = 0 ; j < D.length ; j ++){
-                int sum = C[i] + D[j];
-                if(map.containsKey(sum))
+            for (int aD : D) {
+                int sum = C[i] + aD;
+                if (map.containsKey(sum))
                     map.put(sum, map.get(sum) + 1);
                 else
                     map.put(sum, 1);

@@ -35,11 +35,7 @@ public class IntersectionOf2Arrays2 {
     public int[] myIntersect(int[] nums1, int[] nums2){
         Map<Integer, Integer> map1 = new HashMap<>();
         for (int num : nums1){
-            if(map1.containsKey(num)){
-                map1.put(num, map1.get(num)+1);
-            } else {
-                map1.put(num,1);
-            }
+            map1.put(num, map1.getOrDefault(num,0)+1);
         }
 
         List<Integer> resultList = new ArrayList<>();
@@ -51,8 +47,9 @@ public class IntersectionOf2Arrays2 {
         }
 
         int[] res = new int[resultList.size()];
-        for (int i = 0; i < res.length; i++) {
-            res[i]=resultList.get(i);
+        int index =0;
+        for(int num : resultList){
+            res[index++] = num;
         }
         return res;
     }

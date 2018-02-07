@@ -37,12 +37,10 @@ public class NumberOfBoomerangs {
     private int MyNumberOfBoomerangs(int[][] points){
         int res = 0;
         for (int i = 0; i < points.length; i++) {
-            int[] mpair = points[i];
             HashMap<Integer, Integer> disMap = new HashMap<>();
             for (int j = 0; j < points.length; j++) {
                 if(j!=i) {
-                    int[] epair = points[j];
-                    int dis = dis(mpair, epair);
+                    int dis = dis(points[i], points[j]);
                     disMap.put(dis, disMap.getOrDefault(dis, 0) + 1);
                 }
             }

@@ -15,8 +15,7 @@ public class TwoSun {
 
             int complement = target - nums[i];
             if(record.containsKey(complement)){
-                int[] res = {i, record.get(complement)};
-                return res;
+                return new int[]{i, record.get(complement)};
             }
 
             record.put(nums[i], i);
